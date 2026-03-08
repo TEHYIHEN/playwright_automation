@@ -1,0 +1,6 @@
+@echo off
+echo 🔍 正在执行自动化测试并生成报告...
+call npx playwright test tests/inbound-automation.spec.ts
+echo 📊 正在打开测试报告...
+call npx playwright show-report
+pause
