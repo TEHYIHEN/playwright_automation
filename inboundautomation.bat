@@ -1,6 +1,10 @@
+@REM @echo off
+@REM echo  On running the tests...
+@REM call npx playwright test tests/inbound-automation.spec.ts
+@REM echo Preparing the report...
+@REM call npx playwright show-report
+@REM pause
+
 @echo off
-echo 🔍 正在执行自动化测试并生成报告...
-call npx playwright test tests/inbound-automation.spec.ts
-echo 📊 正在打开测试报告...
-call npx playwright show-report
-pause
+npx playwright test tests/inbound-automation.spec.ts
+powershell -command "Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Inbound automation completed successfully','Automation Finished')"
